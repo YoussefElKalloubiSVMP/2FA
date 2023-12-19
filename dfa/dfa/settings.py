@@ -37,7 +37,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+        
+    'codes',
+    'users',
+    #pip install django-crispy-forms
+    'crispy_forms',
+    'bootstrap4',
+
+    "crispy_bootstrap4",
 ]
+#pip install twilio
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = '/login/'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +72,7 @@ ROOT_URLCONF = 'dfa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
